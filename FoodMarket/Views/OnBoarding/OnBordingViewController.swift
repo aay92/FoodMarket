@@ -17,22 +17,33 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
-        // Do any additional setup after loading the view.
+        slides = [OnBoardingSlide(title: "Быстрая доставка до двери",
+                                  description: "Быстрая доставка до твоей квартиры",
+                                  image: #imageLiteral(resourceName: "slide1")),
+                  OnBoardingSlide(title: "Ежедневные акции и кэшбек",
+                                  description: "Для постоянных клиентов доступен кэшбек с покупок",
+                                  image: #imageLiteral(resourceName: "slide2")),
+                  OnBoardingSlide(title: "Лучший ассортимент",
+                                  description: "Большое количество встроенных рецептов для наших пользователей ",
+                                  image: #imageLiteral(resourceName: "slide3"))
+        ]
     }
     
 
     @IBAction func actionButtonNext(_ sender: Any) {
     }
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension OnBoardingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return slides.count
     }
-    */
-
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier:OnBoardingCollectionViewCell.identifier, for: indexPath) as! OnBoardingCollectionViewCell
+        cell.setUp(slides[indexPath.row])
+        return cell
+    }
+    
+    
 }
