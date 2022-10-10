@@ -20,7 +20,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="JfD-81-BqW">
                                 <rect key="frame" x="0.0" y="18" width="414" height="712"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4PZ-JN-JIs">
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="4PZ-JN-JIs">
                                     <size key="itemSize" width="412" height="676"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -35,10 +35,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="arh-Ky-fsK">
-                                                    <rect key="frame" x="0.0" y="0.0" width="412" height="595"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="412" height="597"/>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ydm-f2-ZV6">
-                                                    <rect key="frame" x="16" y="595" width="380" height="65"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ydm-f2-ZV6">
+                                                    <rect key="frame" x="16" y="607" width="380" height="53"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Быстрая доставка до двери" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rXL-1d-wHe">
                                                             <rect key="frame" x="33" y="0.0" width="314" height="30"/>
@@ -47,7 +47,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Быстрая доставка до твоей квартиры" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bys-ed-F0h">
-                                                            <rect key="frame" x="55.5" y="35" width="269" height="30"/>
+                                                            <rect key="frame" x="55.5" y="35" width="269" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -63,7 +63,7 @@
                                                 <constraint firstItem="arh-Ky-fsK" firstAttribute="leading" secondItem="EOF-FH-tUH" secondAttribute="leading" id="N0I-AR-snU"/>
                                                 <constraint firstAttribute="trailing" secondItem="arh-Ky-fsK" secondAttribute="trailing" id="PMp-Ai-fk4"/>
                                                 <constraint firstItem="arh-Ky-fsK" firstAttribute="top" secondItem="EOF-FH-tUH" secondAttribute="top" id="d8x-vl-u4v"/>
-                                                <constraint firstItem="Ydm-f2-ZV6" firstAttribute="top" secondItem="arh-Ky-fsK" secondAttribute="bottom" id="f7v-Gj-vsE"/>
+                                                <constraint firstItem="Ydm-f2-ZV6" firstAttribute="top" secondItem="arh-Ky-fsK" secondAttribute="bottom" constant="10" id="f7v-Gj-vsE"/>
                                                 <constraint firstItem="Ydm-f2-ZV6" firstAttribute="leading" secondItem="EOF-FH-tUH" secondAttribute="leading" constant="16" id="pBG-xv-onq"/>
                                                 <constraint firstAttribute="trailing" secondItem="arh-Ky-fsK" secondAttribute="trailing" id="zVb-sy-sja"/>
                                             </constraints>
@@ -104,7 +104,7 @@
                                     <action selector="actionButtonNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q2S-lc-MzG"/>
                                 </connections>
                             </button>
-                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zxy-6a-PK1">
+                            <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Zxy-6a-PK1">
                                 <rect key="frame" x="149.5" y="738" width="115.5" height="26"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="0.64292735927152322" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -132,6 +132,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="80.357142857142847"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="YgX-KU-mqO">
+            <objects>
+                <viewController id="idg-gJ-53d" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SV8-g5-1BV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="PHC-39-aa7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Cip-pt-NwB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9SE-Xg-FgZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1843.4782608695652" y="97.767857142857139"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="9bc-De-UUq">
+            <objects>
+                <navigationController storyboardIdentifier="HomeNC" automaticallyAdjustsScrollViewInsets="NO" id="KVz-Vy-hVr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1T1-3R-WnQ">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="idg-gJ-53d" kind="relationship" relationship="rootViewController" id="LHK-3A-bhK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4cr-qi-n1J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="933.33333333333337" y="97.767857142857139"/>
         </scene>
     </scenes>
     <resources>
