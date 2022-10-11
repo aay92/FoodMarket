@@ -9,22 +9,19 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    @IBOutlet weak var categoryCollectionView: UICollectionView!
+    
+    var categores: [DishCategory] = [
+        .init(id: "id1", name: "Columb Dish", image: "https://picsum.photos/100/200"),
+        .init(id: "id1", name: "Africa Dish", image: "https://picsum.photos/100/200"),
+        .init(id: "id1", name: "Russian Dish", image: "https://picsum.photos/100/200"),
+        .init(id: "id1", name: "USA Dish", image: "https://picsum.photos/100/200"),
+        .init(id: "id1", name: "Mexica Dish", image: "https://picsum.photos/100/200")
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-    
-        // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

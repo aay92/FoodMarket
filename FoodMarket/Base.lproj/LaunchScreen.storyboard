@@ -16,36 +16,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="SBG-c0-Zof">
-                                <rect key="frame" x="-5" y="331" width="419" height="217"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" insetsLayoutMarginsFromSafeArea="NO" image="appstore" translatesAutoresizingMaskIntoConstraints="NO" id="SBG-c0-Zof">
+                                <rect key="frame" x="39" y="282" width="336" height="332"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="217" id="afR-LE-E7i"/>
-                                    <constraint firstAttribute="width" constant="419" id="dB3-dB-Vl4"/>
+                                    <constraint firstAttribute="height" constant="332" id="Zgm-x4-lvD"/>
+                                    <constraint firstAttribute="width" constant="336" id="Zte-tR-902"/>
                                 </constraints>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food market" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-zD-nzJ">
-                                <rect key="frame" x="132" y="502" width="144" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="144" id="5mr-sG-DhT"/>
-                                    <constraint firstAttribute="height" constant="32" id="e63-LL-2e1"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="25"/>
-                                <color key="textColor" red="0.86381524801254272" green="0.30270099639892578" blue="0.062541745603084564" alpha="0.60373551324503316" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" semanticContentAttribute="playback" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="752" text="Food market" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gjR-zD-nzJ">
+                                <rect key="frame" x="79" y="510" width="257" height="72"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="16" leading="10" bottom="11" trailing="8"/>
+                                <fontDescription key="fontDescription" name="MuktaMahee-Bold" family="Mukta Mahee" pointSize="42"/>
+                                <color key="textColor" red="0.94117647410000005" green="0.59215688710000003" blue="0.2941176593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="1" height="1"/>
+                                <color key="shadowColor" white="0.0" alpha="0.71934499172185429" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="2" height="2"/>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="SBG-c0-Zof" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="287" id="5Gv-Xh-Z9D"/>
-                            <constraint firstItem="gjR-zD-nzJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="458" id="BJc-yH-vKE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="SBG-c0-Zof" secondAttribute="bottom" constant="314" id="Lrd-19-Xuq"/>
-                            <constraint firstItem="gjR-zD-nzJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="PNU-8E-3O4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gjR-zD-nzJ" secondAttribute="trailing" constant="138" id="WAb-Qz-iBD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gjR-zD-nzJ" secondAttribute="bottom" constant="328" id="b2Z-x4-f6V"/>
-                            <constraint firstItem="SBG-c0-Zof" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="huN-Hh-YEH"/>
-                            <constraint firstItem="SBG-c0-Zof" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="-5" id="vRI-UF-Cos"/>
+                            <constraint firstItem="gjR-zD-nzJ" firstAttribute="top" secondItem="SBG-c0-Zof" secondAttribute="bottom" constant="-104" id="0os-Lj-vOP"/>
+                            <constraint firstItem="SBG-c0-Zof" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="8KH-BB-hnO"/>
+                            <constraint firstItem="gjR-zD-nzJ" firstAttribute="leading" secondItem="SBG-c0-Zof" secondAttribute="trailing" constant="-296" id="Xwr-5F-w4F"/>
+                            <constraint firstItem="SBG-c0-Zof" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="ZdC-62-DnD"/>
+                            <constraint firstItem="SBG-c0-Zof" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="qCd-2B-iuR"/>
+                            <constraint firstItem="gjR-zD-nzJ" firstAttribute="trailing" secondItem="SBG-c0-Zof" secondAttribute="trailing" constant="-39" id="u6R-ds-DKg"/>
+                            <constraint firstItem="SBG-c0-Zof" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="x5E-4L-LgD"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -55,7 +53,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="appstore" width="1024" height="1024"/>
+        <image name="appstore" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
