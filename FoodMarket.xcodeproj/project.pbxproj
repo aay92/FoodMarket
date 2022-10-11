@@ -16,6 +16,7 @@
 		5B0F63CB28F4106500E9FBF1 /* UIView + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0F63CA28F4106500E9FBF1 /* UIView + Ext.swift */; };
 		5B0F63CD28F4114100E9FBF1 /* OnBoardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0F63CC28F4114100E9FBF1 /* OnBoardingSlide.swift */; };
 		5B0F63CF28F4142E00E9FBF1 /* OnBoardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0F63CE28F4142E00E9FBF1 /* OnBoardingCollectionViewCell.swift */; };
+		5B0F63D128F5717700E9FBF1 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B0F63D028F5717700E9FBF1 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5B0F63CA28F4106500E9FBF1 /* UIView + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Ext.swift"; sourceTree = "<group>"; };
 		5B0F63CC28F4114100E9FBF1 /* OnBoardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingSlide.swift; sourceTree = "<group>"; };
 		5B0F63CE28F4142E00E9FBF1 /* OnBoardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		5B0F63D028F5717700E9FBF1 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		5B0F63C428F40B9100E9FBF1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5B0F63D228F571A100E9FBF1 /* Home */,
 				5B0F63C628F40BC200E9FBF1 /* OnBoarding */,
 			);
 			path = Views;
@@ -95,6 +98,7 @@
 		5B0F63C528F40BA700E9FBF1 /* CustonViews */ = {
 			isa = PBXGroup;
 			children = (
+				5B0F63D328F57AB600E9FBF1 /* СolletionViewCells */,
 			);
 			path = CustonViews;
 			sourceTree = "<group>";
@@ -114,6 +118,21 @@
 				5B0F63CA28F4106500E9FBF1 /* UIView + Ext.swift */,
 			);
 			path = Extentions;
+			sourceTree = "<group>";
+		};
+		5B0F63D228F571A100E9FBF1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				5B0F63D028F5717700E9FBF1 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		5B0F63D328F57AB600E9FBF1 /* СolletionViewCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "СolletionViewCells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -192,6 +211,7 @@
 				5B0F63CD28F4114100E9FBF1 /* OnBoardingSlide.swift in Sources */,
 				5B0F63CF28F4142E00E9FBF1 /* OnBoardingCollectionViewCell.swift in Sources */,
 				5B0F63CB28F4106500E9FBF1 /* UIView + Ext.swift in Sources */,
+				5B0F63D128F5717700E9FBF1 /* HomeViewController.swift in Sources */,
 				5B0F63B228F407FE00E9FBF1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

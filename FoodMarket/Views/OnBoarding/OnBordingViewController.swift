@@ -37,6 +37,7 @@ class OnBoardingViewController: UIViewController {
                                   description: "Большое количество встроенных рецептов для наших пользователей ",
                                   image: #imageLiteral(resourceName: "slide3"))
         ]
+        pageController.numberOfPages = slides.count
     }
     
 
