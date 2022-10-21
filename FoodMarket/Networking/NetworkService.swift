@@ -11,10 +11,6 @@ struct NetworkService {
 
     static let shared = NetworkService()
     private init(){}
-    
-//    func myReuest(completion: @escaping(Result<[Dish], Error>)-> Void){
-//        request(route: .temp, method: .gat, completion: completion )
-//    }
 
     func fetchAllCategories(completion: @escaping(Result<AllDishes,Error>)-> Void){
         request(route: .fetchAllCategories, method: .gat, completion: completion)
@@ -27,6 +23,10 @@ struct NetworkService {
     
     func categoryDishes(categoryId: String, completion: @escaping(Result<[Dish], Error>) -> Void){
         request(route: .fetchCategoryDishes(categoryId), method: .gat, completion: completion)
+    }
+    
+    func fetchOrders(completion: @escaping(Result<[Order], Error>) -> Void){
+        request(route: .fetchOrders, method: .gat, completion: completion)
     }
     
     private func request<T: Decodable>(route: Route,

@@ -6,19 +6,33 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListOrdersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var orders: [Order] = [
-        .init(id: "id1", name: "Alex", dish: .init(id: "id1", name: "Special dish", description: "It is my lover dish", image:  "https://random.imagecdn.app/100/200", calories: 567.98)),
-        .init(id: "id2", name: "Yana", dish: .init(id: "id2", name: "Popular dish", description: "It is my lover dish", image:  "https://random.imagecdn.app/100/200", calories: 787.98))
-    ]
+    var orders: [Order] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Orders"
         registerCells()
+        ProgressHUD.show()
+    }
+    
+//    Обновляется инфа когда открыто представление
+    override func viewDidAppear(_ animated: Bool) {
+        NetworkService.shared.fetchOrders { [weak self](result) in
+            switch result {
+            case .success(let order):
+                ProgressHUD.dismiss()
+                self?.orders = order
+                self?.tableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
 
     private func registerCells(){
