@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -13,36 +14,45 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var popularCollectionView: UICollectionView!
     @IBOutlet weak var specialCollectionView: UICollectionView!
     
-    var categores: [DishCategory] = [
-        .init(id: "id1", name: "Columb Dish", image: "https://random.imagecdn.app/100/200"),
-        .init(id: "id1", name: "Africa Dish", image: "https://random.imagecdn.app/100/200"),
-        .init(id: "id1", name: "Russian Dish", image: "https://random.imagecdn.app/100/200"),
-        .init(id: "id1", name: "USA Dish", image: "https://random.imagecdn.app/100/200"),
-        .init(id: "id1", name: "Mexica Dish", image: "https://random.imagecdn.app/100/200")
-    ]
-    
-    var populars: [Dish] = [
-        .init(id: "id1", name: "Pizza", description: "The best what i try eat", image:  "https://random.imagecdn.app/100/200", calories: 56.98),
-        .init(id: "id2", name: "hot-dog", description: "The best what i try eat", image:  "https://random.imagecdn.app/100/200", calories: 577.68),
-        .init(id: "id3", name: "Tako", description: "The best what i try eat", image:  "https://random.imagecdn.app/100/200", calories: 45.88)
-    ]
-    
-    var specials: [Dish] = [
-        .init(id: "id1", name: "Special dish", description: "It is my lover dish", image:  "https://random.imagecdn.app/100/200", calories: 567.98),
-        .init(id: "id2", name: "Special hot-dog", description: "The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat The best what i try eat", image:  "https://random.imagecdn.app/100/200", calories: 57.68),
-        .init(id: "id3", name: "Wow Tako", description: "The best what i try eat", image:  "https://random.imagecdn.app/100/200", calories: 458.88)
-    ]
+    var categores: [DishCategory] = []
+    var populars: [Dish] = []
+    var specials: [Dish] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let service = NetworkService()
-        let request = service.createRequest(route: .temp, method: .post, parameters: ["firstName": "Alex", "lastName": "Aleninn"])
-        print("The URL is: \(request?.url)")
-        print("The httpBody: \(request?.httpBody)")
-
-        
+//        NetworkService.shared.myReuest{ [self] (results) in
+//            switch results {
+//            case .success(let result):
+//                for dish in result {
+//                    populars.append(dish)
+//                    popularCollectionView.reloadData()
+//                }
+//            case .failure(let error):
+//                print("The error in homeViewController: \(error.localizedDescription)")
+//            }
+//        }
         registerCells()
+        ProgressHUD.show()
+        NetworkService.shared.fetchAllCategories {[weak self] (result) in
+            switch result {
+            case .success( let allDishes):
+                print("The success")
+                ProgressHUD.dismiss()
+                
+                self?.categores = allDishes.categories ?? []
+                self?.populars = allDishes.populars ?? []
+                self?.specials = allDishes.specials ?? []
+                
+                self?.categoryCollectionView.reloadData()
+                self?.popularCollectionView.reloadData()
+                self?.specialCollectionView.reloadData()
+                
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
+        
     }
     
     private func registerCells(){

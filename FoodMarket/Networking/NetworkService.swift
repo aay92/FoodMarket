@@ -9,6 +9,72 @@ import Foundation
 
 struct NetworkService {
 
+    static let shared = NetworkService()
+    private init(){}
+    
+//    func myReuest(completion: @escaping(Result<[Dish], Error>)-> Void){
+//        request(route: .temp, method: .gat, completion: completion )
+//    }
+
+    func fetchAllCategories(completion: @escaping(Result<AllDishes,Error>)-> Void){
+        request(route: .fetchAllCategories, method: .gat, completion: completion)
+    }
+    
+    private func request<T: Decodable>(route: Route,
+                                     method: Method,
+                                     parameters: [String: Any]? = nil,
+                                     completion: @escaping(Result<T,Error>) -> Void) {
+        
+        guard let request = createRequest(route: route, method: method, parameters: parameters) else {
+            completion(.failure(AppError.unknownError))
+            return }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            var result: Result<Data, Error>?
+            if let data = data {
+                result = .success(data)
+                let responseString = String(data: data, encoding: .utf8) ?? "Could not stringify our data"
+                print("The response: \(responseString)")
+            } else if let error = error {
+                result = .failure(error)
+                print("The error is: \(error.localizedDescription)")
+            }
+            DispatchQueue.main.async {
+                self.handleResponse(result: result, completion: completion)
+            }
+        }.resume()
+    }
+    
+    private func handleResponse<T: Decodable>(result: Result<Data, Error>?,
+                                completion: (Result<T,Error>) -> Void){
+        guard let result = result else {
+            completion(.failure(AppError.unknownError))
+            return
+        }
+        
+        switch result {
+        case .success(let data):
+            guard let response = try? JSONDecoder().decode(ApiResponse<T>.self, from: data) else {
+                completion(.failure(AppError.errorDecoding))
+                return
+            }
+            
+            if let error = response.error {
+                completion(.failure(AppError.serverError(error)))
+                return
+            }
+            
+            if let decodedData = response.data {
+                completion(.success(decodedData))
+            } else {
+                completion(.failure(AppError.unknownError))
+            }
+            
+        case .failure(let error):
+            completion(.failure(error))
+        }
+
+    }
     
     /// Эта функция помогает сгенерировать запрос
     /// - Parameters:
@@ -16,7 +82,7 @@ struct NetworkService {
     ///   - method: Метод это тип отправляемого запрова в парметре
     ///   - parameters: любую доп. информацию передеют на серверную часть
     /// - Returns: URLRequest
-    func createRequest(route: Route,
+    private func createRequest(route: Route,
                                method: Method,
                                parameters: [String : Any]? = nil )-> URLRequest? {
         let urlString = Route.baseURL + route.description
