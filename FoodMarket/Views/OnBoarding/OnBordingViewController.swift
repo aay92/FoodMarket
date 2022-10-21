@@ -27,6 +27,8 @@ class OnBoardingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         slides = [OnBoardingSlide(title: "Быстрая доставка до двери",
                                   description: "Быстрая доставка до твоей квартиры",
                                   image: #imageLiteral(resourceName: "slide1")),

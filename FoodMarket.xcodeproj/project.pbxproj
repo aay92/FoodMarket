@@ -35,6 +35,9 @@
 		5B40BB6B28FE7BB100BB53A8 /* ListDishViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40BB6A28FE7BB100BB53A8 /* ListDishViewController.swift */; };
 		5B40BB6E28FE808400BB53A8 /* ListOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40BB6D28FE808400BB53A8 /* ListOrdersViewController.swift */; };
 		5B40BB7028FE825200BB53A8 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40BB6F28FE825200BB53A8 /* Order.swift */; };
+		5BC6832A2900846500E0658A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC683292900846500E0658A /* NetworkService.swift */; };
+		5BC6832C2900858000E0658A /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6832B2900858000E0658A /* Route.swift */; };
+		5BC6832E2900866000E0658A /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BC6832D2900866000E0658A /* Method.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,9 @@
 		5B40BB6A28FE7BB100BB53A8 /* ListDishViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDishViewController.swift; sourceTree = "<group>"; };
 		5B40BB6D28FE808400BB53A8 /* ListOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOrdersViewController.swift; sourceTree = "<group>"; };
 		5B40BB6F28FE825200BB53A8 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		5BC683292900846500E0658A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		5BC6832B2900858000E0658A /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		5BC6832D2900866000E0658A /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		856DDB1761850D1A06CD59A9 /* Pods-FoodMarket.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FoodMarket.debug.xcconfig"; path = "Target Support Files/Pods-FoodMarket/Pods-FoodMarket.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +120,7 @@
 		5B0F63AE28F407FE00E9FBF1 /* FoodMarket */ = {
 			isa = PBXGroup;
 			children = (
+				5BC683282900842F00E0658A /* Networking */,
 				5B0F63C928F4103E00E9FBF1 /* Extentions */,
 				5B0F63C528F40BA700E9FBF1 /* CustonViews */,
 				5B0F63C428F40B9100E9FBF1 /* Views */,
@@ -274,6 +281,16 @@
 			path = ListOrders;
 			sourceTree = "<group>";
 		};
+		5BC683282900842F00E0658A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				5BC683292900846500E0658A /* NetworkService.swift */,
+				5BC6832B2900858000E0658A /* Route.swift */,
+				5BC6832D2900866000E0658A /* Method.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		5E731C7410A593924896DEC9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,11 +426,14 @@
 				5B40BB5528FC572000BB53A8 /* PortraitCollectionViewCell.swift in Sources */,
 				5B0F63DE28F5850100E9FBF1 /* String + Ext.swift in Sources */,
 				5B0F63B028F407FE00E9FBF1 /* AppDelegate.swift in Sources */,
+				5BC6832E2900866000E0658A /* Method.swift in Sources */,
 				5B40BB6B28FE7BB100BB53A8 /* ListDishViewController.swift in Sources */,
 				5B0F63CD28F4114100E9FBF1 /* OnBoardingSlide.swift in Sources */,
 				5B40BB6028FD2BA900BB53A8 /* DishDetailViewController.swift in Sources */,
 				5B0F63CF28F4142E00E9FBF1 /* OnBoardingCollectionViewCell.swift in Sources */,
 				5B0F63CB28F4106500E9FBF1 /* UIView + Ext.swift in Sources */,
+				5BC6832C2900858000E0658A /* Route.swift in Sources */,
+				5BC6832A2900846500E0658A /* NetworkService.swift in Sources */,
 				5B40BB5C28FC672500BB53A8 /* DishLandscapeCollectionViewCell.swift in Sources */,
 				5B0F63D128F5717700E9FBF1 /* HomeViewController.swift in Sources */,
 				5B0F63DC28F582AC00E9FBF1 /* DishCategory.swift in Sources */,

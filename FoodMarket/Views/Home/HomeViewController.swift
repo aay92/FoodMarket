@@ -10,9 +10,7 @@ import UIKit
 class HomeViewController: UIViewController {
 
     @IBOutlet weak var categoryCollectionView: UICollectionView!
-    
     @IBOutlet weak var popularCollectionView: UICollectionView!
-    
     @IBOutlet weak var specialCollectionView: UICollectionView!
     
     var categores: [DishCategory] = [
@@ -37,6 +35,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let service = NetworkService()
+        let request = service.createRequest(route: .temp, method: .post, parameters: ["firstName": "Alex", "lastName": "Aleninn"])
+        print("The URL is: \(request?.url)")
+        print("The httpBody: \(request?.httpBody)")
+
+        
         registerCells()
     }
     
@@ -96,4 +101,5 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
 }
+
 
