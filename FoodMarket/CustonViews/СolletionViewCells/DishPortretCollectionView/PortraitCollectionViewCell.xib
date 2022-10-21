@@ -29,7 +29,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="m4v-1g-M0l">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="m4v-1g-M0l">
                                         <rect key="frame" x="0.0" y="39" width="164" height="197.5"/>
                                         <color key="backgroundColor" red="0.94117647410000005" green="0.59215688710000003" blue="0.2941176593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>

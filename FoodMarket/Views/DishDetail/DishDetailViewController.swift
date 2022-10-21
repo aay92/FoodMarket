@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import ProgressHUD
 
 class DishDetailViewController: UIViewController {
     @IBOutlet weak var dishImageView: UIImageView!
@@ -31,6 +32,23 @@ class DishDetailViewController: UIViewController {
     }
     
     @IBAction func actionOrderButton(_ sender: Any) {
+        guard let name = nameField.text?.trimmingCharacters(in: .whitespaces), !name.isEmpty else {
+            ProgressHUD.showError("Пожалуйста введите свое имя")
+            return
+        }
+        ProgressHUD.show("Заказ...")
+        NetworkService.shared.placeOrder(dishId: dish.id ?? "", name: name) { [weak self](result) in
+            switch result {
+            case .success(_):
+                ProgressHUD.showSuccess("Ваш заказ получен!👨‍🍳")
+                self!.nameField.text = ""
+
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+
+        }
     }
+    
     
 }
