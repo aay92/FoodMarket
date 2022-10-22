@@ -51,6 +51,7 @@ class OnBoardingViewController: UIViewController {
             controller.modalPresentationStyle = .fullScreen
             //            анимированый переход на главную страницу
             controller.modalTransitionStyle = .flipHorizontal
+            UserDefaults.standard.hasOnBoarded = true
             //            переход на controller
             present(controller, animated: true, completion: nil)
         } else {
